@@ -6,6 +6,7 @@ import org.I0Itec.zkclient.serialize.BytesPushThroughSerializer;
 import org.jmatrix.logtrace.client.config.AbstractSubscriber;
 import org.jmatrix.logtrace.client.config.LogTraceConfiguration;
 import org.jmatrix.logtrace.client.config.data.WhiteUidCacheData;
+import org.jmatrix.logtrace.client.util.StringPushThroughSerializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -43,9 +44,7 @@ public class ZookeeperSubscriber extends AbstractSubscriber implements IZkDataLi
 
         whiteUidCacheData = new WhiteUidCacheData();
         try {
-            byte[] b = zkClient.readData(zkPath);
-            String zkDatas = new String(b);
-            whiteUidCacheData.initWhiteUid(zkDatas);
+            whiteUidCacheData.initWhiteUid((String) zkClient.readData(zkPath));
         } catch (Exception e) {
             logger.error("can't read white uid.", e);
             return;
@@ -55,7 +54,7 @@ public class ZookeeperSubscriber extends AbstractSubscriber implements IZkDataLi
 
 
     public void start() {
-        zkClient = new ZkClient(logTraceConfiguration.getZkServerList(), 2000, 2000, new BytesPushThroughSerializer());
+        zkClient = new ZkClient(logTraceConfiguration.getZkServerList(), 2000, 2000, new StringPushThroughSerializer());
         zkClient.subscribeDataChanges(zkPath, this);
 
         //初始化

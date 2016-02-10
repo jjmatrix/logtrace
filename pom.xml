@@ -71,5 +71,6 @@
     <modules>
         <module>logtrace-client</module>
         <module>logtrace-sdk</module>
+        <module>logtrace-web</module>
     </modules>
 </project>

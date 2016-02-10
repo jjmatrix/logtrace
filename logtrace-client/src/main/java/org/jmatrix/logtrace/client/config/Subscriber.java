@@ -1,6 +1,6 @@
 package org.jmatrix.logtrace.client.config;
 
-import org.jmatrix.logtrace.client.config.data.WhiteUidCacheData;
+import org.jmatrix.logtrace.client.config.data.CacheData;
 
 /**
  * @author: jmatrix
@@ -9,5 +9,5 @@ import org.jmatrix.logtrace.client.config.data.WhiteUidCacheData;
 public interface Subscriber {
     public void start();
 
-    public WhiteUidCacheData getWhiteUidCacheData();
+    public CacheData getCacheData();
 }

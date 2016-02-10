@@ -1,5 +1,6 @@
 package org.jmatrix.logtrace.client.config;
 
+import org.apache.commons.lang3.StringUtils;
 import org.jmatrix.logtrace.client.util.NamedThreadFactory;
 import org.jmatrix.logtrace.sdk.Env;
 import org.slf4j.Logger;
@@ -30,6 +31,8 @@ public class LogTraceConfiguration {
     private String zkDataRoot = Constants.ZK_ROOT;
 
     private String homePath = System.getProperty(Constants.LOGTRACE_HOME);
+
+    private String cacheFilePath;
 
     private volatile boolean isRun = false;
 
@@ -70,6 +73,11 @@ public class LogTraceConfiguration {
                     this.zkServerList = "127.0.0.1:2181";
                 } else
                     this.zkServerList = properties.getProperty("logtrace.servers");
+                String bakPath = properties.getProperty("logtrace.bakPath");
+                if (StringUtils.isEmpty(bakPath)) {
+                    bakPath = System.getProperty("user.home");
+                }
+                this.cacheFilePath = bakPath + File.separator + "logtrace" + File.separator + "white_data_conf.dat";
             }
             isRun = true;
         } catch (Exception e) {
@@ -100,6 +108,10 @@ public class LogTraceConfiguration {
 
     public void setZkDataRoot(String zkDataRoot) {
         this.zkDataRoot = zkDataRoot;
+    }
+
+    public String getCacheFilePath() {
+        return cacheFilePath;
     }
 
     public boolean isRun() {

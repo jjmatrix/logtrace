@@ -2,7 +2,7 @@ package org.jmatrix.logtrace.client.manager.impl;
 
 import junit.framework.Assert;
 import junit.framework.TestCase;
-import org.jmatrix.logtrace.client.config.data.WhiteUidCacheData;
+import org.jmatrix.logtrace.client.config.data.CacheData;
 
 /**
  * @author: jmatrix
@@ -18,7 +18,7 @@ public class DefaultTraceManagerTest extends TestCase {
     }
 
     public void testGetWhiteUidCache() throws Exception {
-        WhiteUidCacheData cacheData = defaultTraceManager.getWhiteUidCache();
+        CacheData cacheData = defaultTraceManager.getWhiteCache();
         Assert.assertNotNull(cacheData);
     }
 }

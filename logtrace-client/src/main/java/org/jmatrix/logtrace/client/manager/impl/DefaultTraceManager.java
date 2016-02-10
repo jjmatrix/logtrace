@@ -2,7 +2,7 @@ package org.jmatrix.logtrace.client.manager.impl;
 
 import org.jmatrix.logtrace.client.config.LogTraceConfiguration;
 import org.jmatrix.logtrace.client.config.Subscriber;
-import org.jmatrix.logtrace.client.config.data.WhiteUidCacheData;
+import org.jmatrix.logtrace.client.config.data.CacheData;
 import org.jmatrix.logtrace.client.config.impl.ZookeeperSubscriber;
 import org.jmatrix.logtrace.client.manager.TraceManager;
 import org.slf4j.Logger;
@@ -42,13 +42,13 @@ public class DefaultTraceManager implements TraceManager {
         this.systemId = systemId;
     }
 
-    public WhiteUidCacheData getWhiteUidCache() {
-        return subscriber.getWhiteUidCacheData();
+    public CacheData getWhiteCache() {
+        return subscriber.getCacheData();
     }
 
     public static void main(String[] args) {
         DefaultTraceManager defaultTraceManager = new DefaultTraceManager("matrix");
-        WhiteUidCacheData cacheData = defaultTraceManager.getWhiteUidCache();
+        CacheData cacheData = defaultTraceManager.getWhiteCache();
         System.out.println(cacheData);
     }
 }

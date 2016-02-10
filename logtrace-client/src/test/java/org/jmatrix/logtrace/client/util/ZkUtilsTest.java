@@ -14,6 +14,8 @@ public class ZkUtilsTest extends TestCase {
     }
 
     public void testGetZkPath() throws Exception {
+        String zkPath1 = null;
+        assertNotNull(ZkUtils.getZkPath(zkPath1));
 
     }
 }

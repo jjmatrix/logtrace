@@ -1,4 +1,4 @@
-package org.jmatrix.web.controller;
+package org.jmatrix.logtrace.web.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

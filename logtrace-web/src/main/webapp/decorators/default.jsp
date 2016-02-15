@@ -40,7 +40,7 @@
         <div class="row">
             <div id="navleft" class="col-sm-3 col-md-2 sidebar">
                 <ul class="nav nav-pills nav-stacked">
-                    <li role="presentation" class="active"><a href="<c:url value="/home"/>">Home</a></li>
+                    <li role="presentation"><a href="<c:url value="/home"/>">Home</a></li>
                     <li role="presentation"><a href="<c:url value="/config/edit"/>">配置</a></li>
                 </ul>
             </div>

@@ -5,6 +5,7 @@ import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.jmatrix.logtrace.jdbc.Config;
+import org.jmatrix.logtrace.jdbc.SessionFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -18,7 +19,7 @@ import java.util.concurrent.ConcurrentHashMap;
  * @author jmatrix
  * @date 16/2/14
  */
-public class SessionFactoryImpl {
+public class SessionFactoryImpl implements SessionFactory{
 
     private Logger logger = LoggerFactory.getLogger(SessionFactoryImpl.class);
 
@@ -53,7 +54,7 @@ public class SessionFactoryImpl {
             Reader reader = Resources.getResourceAsReader("ibatis.xml");
             sqlSessionFactory = new SqlSessionFactoryBuilder().build(reader, env, properties);
             if (sqlSessionFactory == null) {
-                logger.info("create SessionFactory failed.");
+                logger.info("create SessionFactory failed. env:{}", env);
             }
         } catch (Exception e) {
             logger.error("create SessionFactory error", e);
@@ -81,4 +82,7 @@ public class SessionFactoryImpl {
         return prop;
     }
 
+    public RouteSessionFactory getRouteSessionFactory(String group) {
+        return this.sessionFactoryGroupMap.get(group);
+    }
 }

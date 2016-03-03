@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd" default-autowire="byName">
+
+    <bean id="config" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="location">
+            <value>mongo.properties</value>
+        </property>
+    </bean>
+
+    <context:component-scan base-package="org.jmatrix.logtrace.mongodb"/>
+
+    <bean id="mongoClient" class="org.jmatrix.logtrace.mongodb.MongoClientFactory">
+        <property name="host" value="10.199.147.120:27017"/>
+        <property name="userName" value="matrix"/>
+        <property name="password" value="123456"/>
+        <property name="source" value="logtrace"/>
+        <property name="minConnectionsPerHost" value="10"/>
+        <property name="maxConnectionIdleTime" value="5000"/>
+        <property name="maxConnectionLifeTime" value="5000"/>
+        <property name="connectTimeout" value="1000"/>
+        <property name="maxWaitTime" value="3000"/>
+        <property name="socketTimeout" value="800"/>
+        <property name="socketKeepAlive" value="true"/>
+    </bean>
+
+    <bean id="morphia" class="org.jmatrix.logtrace.mongodb.MorphiaFactory">
+        <property name="packageNames" value="org.jmatrix.logtrace.mongodb.mapper"/>
+        <property name="ignoreInvalidClasses" value="true"/>
+    </bean>
+
+    <bean id="datastore" class="org.jmatrix.logtrace.mongodb.MongoDatastoreFactory">
+        <property name="dbName" value="${mongo.dbName}"/>
+        <property name="mongoClient" ref="mongoClient"/>
+        <property name="morphia" ref="morphia"/>
+    </bean>
+
+</beans>

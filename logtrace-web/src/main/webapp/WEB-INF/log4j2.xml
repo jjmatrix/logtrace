@@ -5,15 +5,6 @@
             <PatternLayout
                     pattern="[%X{__ThreadID}][%d{MM/dd HH:mm:ss}][%C{1} %M %L] [%-3p] %c{1}: %m%n"/>
         </Console>
-
-        <!--<RollingFile name="Error" append="true"-->
-        <!--fileName="${sys:catalina.home}/logs/app/error/error.log" filePattern="${sys:catalina.home}/logs/app/error/error.log.%i">-->
-        <!--<PatternLayout pattern="[%d{MM/dd HH:mm:ss}] %p %c{1} [%t] %m%n" />-->
-        <!--<Policies>-->
-        <!--<SizeBasedTriggeringPolicy size="100 MB"></SizeBasedTriggeringPolicy>-->
-        <!--</Policies>-->
-        <!--<DefaultRolloverStrategy max="10" />-->
-        <!--</RollingFile>-->
     </appenders>
 
     <Loggers>

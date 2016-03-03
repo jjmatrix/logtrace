@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Configuration monitorInterval="600000">
-	<appenders>
-		<Console name="console" target="SYSTEM_OUT">
-			<PatternLayout
-				pattern="[%X{__ThreadID}][%d{MM/dd HH:mm:ss}][%C{1} %M %L] [%-3p] %c{1}: %m%n" />
-		</Console>
+    <appenders>
+        <Console name="console" target="SYSTEM_OUT">
+            <PatternLayout
+                    pattern="[%X{__ThreadID}][%d{MM/dd HH:mm:ss}][%C{1} %M %L] [%-3p] %c{1}: %m%n"/>
+        </Console>
 
-		<!--<RollingFile name="Error" append="true"-->
-			<!--fileName="${sys:catalina.home}/logs/app/error/error.log" filePattern="${sys:catalina.home}/logs/app/error/error.log.%i">-->
-			<!--<PatternLayout pattern="[%d{MM/dd HH:mm:ss}] %p %c{1} [%t] %m%n" />-->
-			<!--<Policies>-->
-				<!--<SizeBasedTriggeringPolicy size="100 MB"></SizeBasedTriggeringPolicy>-->
-			<!--</Policies>-->
-			<!--<DefaultRolloverStrategy max="10" />-->
-		<!--</RollingFile>-->
-	</appenders>
-	
-	<Loggers>
-		<AsyncRoot level="DEBUG">
-			<AppenderRef ref="console"/>
-		</AsyncRoot>
-	</Loggers>
+        <!--<RollingFile name="Error" append="true"-->
+        <!--fileName="${sys:catalina.home}/logs/app/error/error.log" filePattern="${sys:catalina.home}/logs/app/error/error.log.%i">-->
+        <!--<PatternLayout pattern="[%d{MM/dd HH:mm:ss}] %p %c{1} [%t] %m%n" />-->
+        <!--<Policies>-->
+        <!--<SizeBasedTriggeringPolicy size="100 MB"></SizeBasedTriggeringPolicy>-->
+        <!--</Policies>-->
+        <!--<DefaultRolloverStrategy max="10" />-->
+        <!--</RollingFile>-->
+    </appenders>
+
+    <Loggers>
+        <AsyncRoot level="DEBUG">
+            <AppenderRef ref="console"/>
+        </AsyncRoot>
+    </Loggers>
 </Configuration>

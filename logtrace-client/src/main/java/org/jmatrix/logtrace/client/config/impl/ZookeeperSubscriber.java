@@ -84,7 +84,8 @@ public class ZookeeperSubscriber extends AbstractSubscriber implements IZkDataLi
                     }
                 }
             }, new Random().nextInt(5) + 1, TimeUnit.SECONDS);
-
+        } else {
+            updateCacheData(whiteConfig);
         }
     }
 

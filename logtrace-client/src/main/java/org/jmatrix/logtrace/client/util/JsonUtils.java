@@ -8,10 +8,13 @@ import org.slf4j.LoggerFactory;
 import java.io.IOException;
 
 /**
+ * Json Utils
+ *
  * @author: jmatrix
  * @date: 16/1/19
  */
 public class JsonUtils {
+
     private static Logger logger = LoggerFactory.getLogger(JsonUtils.class);
 
     private final static ObjectMapper mapper = new ObjectMapper();

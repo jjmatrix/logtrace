@@ -46,9 +46,4 @@ public class DefaultTraceManager implements TraceManager {
         return subscriber.getCacheData();
     }
 
-    public static void main(String[] args) {
-        DefaultTraceManager defaultTraceManager = new DefaultTraceManager("matrix");
-        CacheData cacheData = defaultTraceManager.getWhiteCache();
-        System.out.println(cacheData);
-    }
 }

@@ -1,12 +1,10 @@
 package org.jmatrix.logtrace.mongodb.impl;
 
-import org.bson.types.ObjectId;
 import org.jmatrix.logtrace.mongodb.BaseMongoDao;
 import org.jmatrix.logtrace.mongodb.MapBeanContext;
 import org.jmatrix.logtrace.mongodb.MongoQueryCallback;
 import org.jmatrix.logtrace.utils.ReflectionUtils;
 import org.mongodb.morphia.Datastore;
-import org.mongodb.morphia.Key;
 import org.mongodb.morphia.aggregation.Sort;
 import org.mongodb.morphia.query.Query;
 import org.mongodb.morphia.query.UpdateOperations;

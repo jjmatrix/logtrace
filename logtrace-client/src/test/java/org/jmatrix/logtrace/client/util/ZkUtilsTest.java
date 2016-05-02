@@ -1,21 +1,29 @@
 package org.jmatrix.logtrace.client.util;
 
-import junit.framework.TestCase;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
 
 /**
  * @author: jmatrix
  * @date: 16/1/19
  */
-public class ZkUtilsTest extends TestCase {
+public class ZkUtilsTest{
 
+    @Before
     public void setUp() throws Exception {
-        super.setUp();
 
     }
 
-    public void testGetZkPath() throws Exception {
-        String zkPath1 = null;
-        assertNotNull(ZkUtils.getZkPath(zkPath1));
+    @Test(expected = IllegalArgumentException.class)
+    public void testGetZkPathNullThrowException() throws Exception {
+        String zkPath = null;
+        ZkUtils.getZkPath(zkPath);
+    }
 
+    @Test
+    public void testGetZkPath() throws Exception {
+        String zkPath = "/logtrace";
+        Assert.assertEquals("logtrace", ZkUtils.getZkPath(zkPath));
     }
 }

@@ -14,8 +14,14 @@ public class ZkUtils {
 
     private final static Logger LOGGER = LoggerFactory.getLogger(ZkUtils.class);
 
+    /**
+     * Get Zookeeper path exclude suffix /
+     *
+     * @param zkPath
+     * @return
+     */
     public static String getZkPath(String zkPath) {
-        String path = "";
+        String path = null;
         if (!StringUtils.isEmpty(zkPath)) {
             if (zkPath.startsWith("/"))
                 path = zkPath.substring(1);

@@ -1,4 +1,4 @@
-package org.jmatrix.logtrace.client.config.data;
+package org.jmatrix.logtrace.data;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;

@@ -1,10 +1,9 @@
 package org.jmatrix.logtrace.client.manager.impl;
 
-import org.jmatrix.logtrace.client.config.LogTraceConfiguration;
-import org.jmatrix.logtrace.client.config.Subscriber;
-import org.jmatrix.logtrace.client.config.data.CacheData;
-import org.jmatrix.logtrace.client.config.impl.ZookeeperSubscriber;
 import org.jmatrix.logtrace.client.manager.TraceManager;
+import org.jmatrix.logtrace.core.LogTraceConfiguration;
+import org.jmatrix.logtrace.zk.Subscriber;
+import org.jmatrix.logtrace.zk.ZookeeperSubscriber;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -42,8 +41,8 @@ public class DefaultTraceManager implements TraceManager {
         this.systemId = systemId;
     }
 
-    public CacheData getWhiteCache() {
-        return subscriber.getCacheData();
-    }
+//    public CacheData getWhiteCache() {
+//        return subscriber.getCacheData();
+//    }
 
 }

@@ -1,4 +1,4 @@
-package org.jmatrix.logtrace.client.config.data;
+package org.jmatrix.logtrace.cache;
 
 import java.util.concurrent.locks.ReentrantLock;
 
@@ -14,13 +14,12 @@ public final class CacheData<T> {
 
     private long lastUpdateTime;
 
-    public void load(T dataBak) {
+    public void load(final T dataBak) {
         this.lastUpdateTime = System.currentTimeMillis() / 1000L;
         try {
             swapLock.lock();
             if (dataBak != null) {
                 this.data = dataBak;
-                dataBak = null;
             }
 
         } finally {

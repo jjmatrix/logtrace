@@ -1,8 +1,7 @@
-package org.jmatrix.logtrace.client.config;
+package org.jmatrix.logtrace.core;
 
 import org.apache.commons.lang3.StringUtils;
-import org.jmatrix.logtrace.client.util.NamedThreadFactory;
-import org.jmatrix.logtrace.core.Env;
+import org.jmatrix.logtrace.utils.NamedThreadFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

@@ -1,4 +1,4 @@
-package org.jmatrix.logtrace.client.config;
+package org.jmatrix.logtrace.core;
 
 /**
  * @author: jmatrix

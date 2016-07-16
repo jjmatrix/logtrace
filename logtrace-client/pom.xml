@@ -6,18 +6,18 @@
     <parent>
         <groupId>org.jmatrix</groupId>
         <artifactId>logtrace</artifactId>
-        <version>1.0.0</version>
+        <version>1.0-SNAPSHOT</version>
     </parent>
-    <groupId>org.jmatrix</groupId>
+
     <artifactId>logtrace-client</artifactId>
-    <version>1.0-SNAPSHOT</version>
     <name>logtrace-client</name>
     <url>http://maven.apache.org</url>
+
     <dependencies>
         <dependency>
             <groupId>org.jmatrix</groupId>
             <artifactId>logtrace-sdk</artifactId>
-            <version>1.0.0</version>
+            <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>com.101tec</groupId>

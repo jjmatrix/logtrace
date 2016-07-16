@@ -3,7 +3,8 @@ package org.jmatrix.logtrace.utils;
 import static org.junit.Assert.*;
 
 /**
- * Created by coral on 16/7/16.
+ * @author jmatrix
+ * @date 16/7/1
  */
 public class ZkUtilsTest {
 
